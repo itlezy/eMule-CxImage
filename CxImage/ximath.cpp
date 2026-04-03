@@ -94,4 +94,3 @@ float CxRect2::Height() const
 {
   return topRight.y-botLeft.y;
 }
-

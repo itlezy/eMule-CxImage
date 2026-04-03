@@ -33,7 +33,7 @@ public:
 	virtual BOOL InitInstance();
 	//}}AFX_VIRTUAL
 
-	BOOL PromptForFileName(CString& fileName, UINT nIDSTitle, 
+	BOOL PromptForFileName(CString& fileName, UINT nIDSTitle,
 		DWORD dwFlags, BOOL bOpenFileDialog, int* pType=NULL);
 	int GetIndexFromType(int nDocType, BOOL bOpenFileDialog);
 	int GetTypeFromIndex(int nIndex, BOOL bOpenFileDialog);

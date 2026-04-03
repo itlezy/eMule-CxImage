@@ -128,7 +128,7 @@ bool CxImage::AlphaSet(CxImage &from)
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
- * Sets the alpha level for a single pixel 
+ * Sets the alpha level for a single pixel
  */
 void CxImage::AlphaSet(const int32_t x,const int32_t y,const uint8_t level)
 {
@@ -136,7 +136,7 @@ void CxImage::AlphaSet(const int32_t x,const int32_t y,const uint8_t level)
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
- * Gets the alpha level for a single pixel 
+ * Gets the alpha level for a single pixel
  */
 uint8_t CxImage::AlphaGet(const int32_t x,const int32_t y)
 {
@@ -174,7 +174,7 @@ uint8_t CxImage::BlindAlphaGet(const int32_t x,const int32_t y)
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
- * Resets the alpha palette 
+ * Resets the alpha palette
  */
 void CxImage::AlphaPaletteClear()
 {
@@ -187,7 +187,7 @@ void CxImage::AlphaPaletteClear()
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
- * Checks if the image has a valid alpha palette. 
+ * Checks if the image has a valid alpha palette.
  */
 bool CxImage::AlphaPaletteIsValid()
 {
@@ -292,7 +292,7 @@ bool CxImage::AlphaMirror()
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
- * Exports the alpha channel in a 8bpp grayscale image. 
+ * Exports the alpha channel in a 8bpp grayscale image.
  */
 bool CxImage::AlphaSplit(CxImage *dest)
 {
@@ -319,7 +319,7 @@ bool CxImage::AlphaSplit(CxImage *dest)
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
- * Exports the alpha palette channel in a 8bpp grayscale image. 
+ * Exports the alpha palette channel in a 8bpp grayscale image.
  */
 bool CxImage::AlphaPaletteSplit(CxImage *dest)
 {
@@ -345,7 +345,7 @@ bool CxImage::AlphaPaletteSplit(CxImage *dest)
 ////////////////////////////////////////////////////////////////////////////////
 /**
  * Merge in the alpha layer the transparent color mask
- * (previously set with SetTransColor or SetTransIndex) 
+ * (previously set with SetTransColor or SetTransIndex)
  */
 bool CxImage::AlphaFromTransparency()
 {

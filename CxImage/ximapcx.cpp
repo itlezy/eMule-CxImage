@@ -44,7 +44,7 @@ bool CxImagePCX::Decode(CxFile *hFile)
     if (pcxHeader.Manufacturer != PCX_MAGIC) cx_throw("Error: Not a PCX file");
     // Check for PCX run length encoding
     if (pcxHeader.Encoding != 1) cx_throw("PCX file has unknown encoding scheme");
- 
+
     Width = (pcxHeader.Xmax - pcxHeader.Xmin) + 1;
     Height = (pcxHeader.Ymax - pcxHeader.Ymin) + 1;
 	info.xDPI = pcxHeader.Hres;
@@ -104,7 +104,7 @@ bool CxImagePCX::Decode(CxFile *hFile)
     if (pcxHeader.BitsPerPixel == 8 && pcxHeader.ColorPlanes == 1){
 		hFile->Read(&c,1,1);
 		if (c != PCX_256_COLORS) cx_throw("bad color map signature");
-		
+
 		for (i = 0; i < PCX_MAXCOLORS; i++){
 			hFile->Read(&ColorMap[i][0],1,1);
 			hFile->Read(&ColorMap[i][1],1,1);
@@ -285,7 +285,7 @@ bool CxImagePCX::Encode(CxFile * hFile)
 		RGBQUAD *rgb = GetPalette();
 		bool binvert = false;
 		if (CompareColors(&rgb[0],&rgb[1])>0) binvert=(head.biBitCount==1);
-		
+
 		uint8_t* plane = (uint8_t*)malloc(pcxHeader.BytesPerLine);
 		uint8_t* raw = (uint8_t*)malloc(head.biWidth);
 
@@ -355,7 +355,7 @@ bool CxImagePCX::PCX_UnpackPixels(uint8_t * pixels, uint8_t * bitplanes, int16_t
 {
 	register int32_t bits;
 	if (planes != 1) return false;
-	
+
 	if (bitsperpixel == 8){  // 8 bits/pixels, no unpacking needed
 		while (bytesperline-- > 0) *pixels++ = *bitplanes++;
 	} else if (bitsperpixel == 4){  // 4 bits/pixel, two pixels per byte

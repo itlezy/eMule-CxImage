@@ -96,7 +96,7 @@ int	convert_image_types( TCHAR *input_image , int typein , TCHAR *output_image ,
 		do {
 			_tcscpy( file_name , c_file.name ); // Get the found file name
 			file_name[ _tcschr( c_file.name , '.' ) - c_file.name + 1 ] = 0; // cut to the file extention
-			_tcscat( file_name , (TCHAR*)( _tcschr( output_image , '.' ) + 1 )  ); 
+			_tcscat( file_name , (TCHAR*)( _tcschr( output_image , '.' ) + 1 )  );
 			_tprintf( _T("Converting [ %s ] to [ %s ]\n") , c_file.name , file_name );
 			status = convert_image_type( c_file.name , typein , file_name , typeout );
 			if( status != 0 )
@@ -132,4 +132,3 @@ int	convert_image_type( TCHAR *input_image , int typein , TCHAR *output_image , 
 
 	return 0;
 }
-

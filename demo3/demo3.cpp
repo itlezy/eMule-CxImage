@@ -220,7 +220,7 @@ void CDemo3App::OnAppAbout()
 // CDemo3App message handlers
 
 
-void CDemo3App::OnFileOpen() 
+void CDemo3App::OnFileOpen()
 {
 	// prompt the user (with all document templates)
 	CString newName;
@@ -228,13 +228,13 @@ void CDemo3App::OnFileOpen()
 	if (!PromptForFileName(newName, AFX_IDS_OPENFILE,
 	  OFN_HIDEREADONLY | OFN_FILEMUSTEXIST, TRUE, &nDocType))
 		return; // open cancelled
-	
+
 	OpenDocumentFile(newName);
 }
 //////////////////////////////////////////////////////////////////////////////
 // prompt for file name - used for open and save as
 // static function called from app
-BOOL CDemo3App::PromptForFileName(CString& fileName, UINT nIDSTitle, 
+BOOL CDemo3App::PromptForFileName(CString& fileName, UINT nIDSTitle,
 	DWORD dwFlags, BOOL bOpenFileDialog, int* pType)
 {
 	CFileDialog dlgFile(bOpenFileDialog);
@@ -253,7 +253,7 @@ BOOL CDemo3App::PromptForFileName(CString& fileName, UINT nIDSTitle,
 	// strDefExt is necessary to hold onto the memory from GetExtFromType
 	CString strDefExt = GetExtFromType(nDocType).Mid(2,3);
 	dlgFile.m_ofn.lpstrDefExt = strDefExt;
-		
+
 	CString strFilter = GetFileTypes(bOpenFileDialog);
 	dlgFile.m_ofn.lpstrFilter = strFilter;
 	dlgFile.m_ofn.lpstrTitle = title;

@@ -50,7 +50,7 @@ BEGIN
             VALUE "FileDescription", "cximage\0"
             VALUE "FileVersion", "7, 0, 2, 0\0"
             VALUE "InternalName", "cximage\0"
-            VALUE "LegalCopyright", "Copyright © 2001 - 2011\0"
+            VALUE "LegalCopyright", "Copyright Â© 2001 - 2011\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "cximagecrt.dll\0"
             VALUE "PrivateBuild", "\0"
@@ -86,19 +86,19 @@ LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE DISCARDABLE
 BEGIN
     "resrc1.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE DISCARDABLE
 BEGIN
     "#include ""resource.h""\r\n"
     "#include ""winresrc.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE DISCARDABLE
 BEGIN
     "\r\n"
     "\0"
@@ -120,4 +120,3 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
-

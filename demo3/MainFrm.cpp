@@ -51,7 +51,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
 	if (CMDIFrameWnd::OnCreate(lpCreateStruct) == -1)
 		return -1;
-	
+
 	if (!m_wndToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD | WS_VISIBLE | CBRS_TOP
 		| CBRS_GRIPPER | CBRS_TOOLTIPS | CBRS_FLYBY | CBRS_SIZE_DYNAMIC) ||
 		!m_wndToolBar.LoadToolBar(IDR_MAINFRAME))
@@ -102,9 +102,9 @@ void CMainFrame::Dump(CDumpContext& dc) const
 // CMainFrame message handlers
 
 
-void CMainFrame::OnEditPaste() 
+void CMainFrame::OnEditPaste()
 {
-	CDemo3Doc *NewDoc=(CDemo3Doc*)((CDemo3App*)AfxGetApp())->demoTemplate->OpenDocumentFile(NULL); 
+	CDemo3Doc *NewDoc=(CDemo3Doc*)((CDemo3App*)AfxGetApp())->demoTemplate->OpenDocumentFile(NULL);
 
 	if (NewDoc)	{
 		HANDLE hBitmap=NULL;
@@ -119,10 +119,10 @@ void CMainFrame::OnEditPaste()
 
 		NewDoc->SetTitle(_T("Clipboard Image"));
 		NewDoc->UpdateAllViews(0,WM_USER_NEWIMAGE);
-	}	
+	}
 }
 
-void CMainFrame::OnUpdateEditPaste(CCmdUI* pCmdUI) 
+void CMainFrame::OnUpdateEditPaste(CCmdUI* pCmdUI)
 {
 	if(!IsClipboardFormatAvailable(CF_DIB)) pCmdUI->Enable(FALSE);
 }

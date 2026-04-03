@@ -322,4 +322,3 @@ bool CxImageJAS::Encode(CxFile * hFile, uint32_t imagetype)
 #endif // CXIMAGE_SUPPORT_ENCODE
 ////////////////////////////////////////////////////////////////////////////////
 #endif // CXIMAGE_SUPPORT_JASPER
-

@@ -78,7 +78,7 @@ void CDemo3View::OnDraw(CDC* pDC)
 		pDC->SelectObject(old);
 	}
 
-	CxImage* ima = pDoc->GetImage(); 
+	CxImage* ima = pDoc->GetImage();
 	if (ima) {
 		if (bPrinting) {
 			// get size of printer page (in pixels)
@@ -107,7 +107,7 @@ void CDemo3View::OnDraw(CDC* pDC)
 	delete pMemDC;
 }
 //////////////////////////////////////////////////////////////////////////////
-BOOL CDemo3View::OnEraseBkgnd(CDC* pDC) 
+BOOL CDemo3View::OnEraseBkgnd(CDC* pDC)
 {
 	return 1;
 }
@@ -153,7 +153,7 @@ CDemo3Doc* CDemo3View::GetDocument() // non-debug version is inline
 /////////////////////////////////////////////////////////////////////////////
 // CDemo3View message handlers
 //////////////////////////////////////////////////////////////////////////////
-void CDemo3View::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint) 
+void CDemo3View::OnUpdate(CView* pSender, LPARAM lHint, CObject* pHint)
 {
 	switch (lHint)
 	{

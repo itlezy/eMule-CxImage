@@ -158,7 +158,7 @@ int CDemo3Doc::FindType(const CString& ext)
 	return type;
 }
 //////////////////////////////////////////////////////////////////////////////
-BOOL CDemo3Doc::OnOpenDocument(LPCTSTR lpszPathName) 
+BOOL CDemo3Doc::OnOpenDocument(LPCTSTR lpszPathName)
 {
 	CString filename(lpszPathName);
 	CString ext(FindExtension(filename));
@@ -184,7 +184,7 @@ BOOL CDemo3Doc::OnOpenDocument(LPCTSTR lpszPathName)
 		CString s;
 		s.Format(_T("File with %d images. Read all?"),image->GetNumFrames());
 		if (AfxMessageBox(s,MB_OKCANCEL)==IDOK){
-			
+
 			int j; // points to the document name
 			for(j=filename.GetLength()-1;j>=0;j--){
 				if (filename[j]=='\\'){	j++; break;	}
@@ -209,7 +209,7 @@ BOOL CDemo3Doc::OnOpenDocument(LPCTSTR lpszPathName)
 	return TRUE;
 }
 //////////////////////////////////////////////////////////////////////////////
-BOOL CDemo3Doc::OnSaveDocument(LPCTSTR lpszPathName) 
+BOOL CDemo3Doc::OnSaveDocument(LPCTSTR lpszPathName)
 {
 	CString filename(lpszPathName);
 	CString ext(FindExtension(filename));
@@ -252,7 +252,7 @@ BOOL CDemo3Doc::DoSave(LPCTSTR pszPathName, BOOL bReplace /*=TRUE*/)
 		}
 
 		int nDocType = image->GetType();
-		if (!theApp.PromptForFileName(newName, 
+		if (!theApp.PromptForFileName(newName,
 			bReplace ? AFX_IDS_SAVEFILE : AFX_IDS_SAVEFILECOPY,
 			OFN_HIDEREADONLY | OFN_PATHMUSTEXIST, FALSE, &nDocType))
 		{
@@ -264,7 +264,7 @@ BOOL CDemo3Doc::DoSave(LPCTSTR pszPathName, BOOL bReplace /*=TRUE*/)
 	if (!OnSaveDocument(newName)){
 		if (pszPathName == NULL){
 			// be sure to delete the file
-			TRY 
+			TRY
 			{
 				CFile::Remove(newName);
 			}
@@ -291,7 +291,7 @@ BOOL CDemo3Doc::DoSave(LPCTSTR pszPathName, BOOL bReplace /*=TRUE*/)
 	return TRUE;        // success
 }
 
-void CDemo3Doc::OnEditCopy() 
+void CDemo3Doc::OnEditCopy()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
@@ -306,10 +306,10 @@ void CDemo3Doc::OnEditCopy()
 		}
 	}
 	CloseClipboard();
-	
+
 }
 
-void CDemo3Doc::OnEditDither() 
+void CDemo3Doc::OnEditDither()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
@@ -318,43 +318,43 @@ void CDemo3Doc::OnEditDither()
 	UpdateAllViews(NULL);
 }
 
-void CDemo3Doc::OnEditFlip() 
+void CDemo3Doc::OnEditFlip()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
 
-	image->Flip();	
+	image->Flip();
 	UpdateAllViews(NULL);
 }
 
-void CDemo3Doc::OnEditGrayscale() 
+void CDemo3Doc::OnEditGrayscale()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
 
-	image->GrayScale();	
+	image->GrayScale();
 	UpdateAllViews(NULL);
 }
 
-void CDemo3Doc::OnEditMirror() 
+void CDemo3Doc::OnEditMirror()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
 
-	image->Mirror();	
+	image->Mirror();
 	UpdateAllViews(NULL);
 }
 
-void CDemo3Doc::OnEditNegative() 
+void CDemo3Doc::OnEditNegative()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
 
-	image->Negative();	
+	image->Negative();
 	UpdateAllViews(NULL);
 }
 
-void CDemo3Doc::OnEditSharpen() 
+void CDemo3Doc::OnEditSharpen()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
@@ -364,11 +364,11 @@ void CDemo3Doc::OnEditSharpen()
 	UpdateAllViews(NULL);
 }
 
-void CDemo3Doc::OnEditSoften() 
+void CDemo3Doc::OnEditSoften()
 {
 	if (image==0) return;
 	if (!image->IsValid()) return;
-	
+
 	int kernel[]={1,1,1,1,8,1,1,1,1};
 	image->Filter(kernel,3,16,0);
 	UpdateAllViews(NULL);

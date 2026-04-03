@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-//#ifndef __MINGW32__ 
+//#ifndef __MINGW32__
 // #include <afxwin.h>         // MFC core and standard components
 //#endif
 
